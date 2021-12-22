@@ -252,6 +252,7 @@ ax.imshow(cat);
 ```
 cat.shape
 ```
+`(418, 615, 3)`
 
 #### Przekształcamy dane i skalujemy kolory
 ```
@@ -259,6 +260,7 @@ data = cat / 255.0 # use 0...1 scale
 data = data.reshape(418 * 615, 3)
 data.shape
 ```
+`(257070, 3)`
 
 #### Wizualizacja pikseli
 ```
@@ -285,3 +287,39 @@ def plot_pixels(data, title, colors=None, N=10000):
 ```
 plot_pixels(data, title='Input color space: 16 million possible colors')
 ```
+![cat2](cat2.png)
+
+#### Redukcja liczby kolorów
+Według serwisu [IMGonline.com](https://www.imgonline.com.ua/eng/unique-colors-number.php) mój obraz ma 47160 unikalnych kolorów. Zredukujemy tę liczbę do 8.
+
+```
+kmeans = KMeans(n_clusters=8)
+kmeans.fit(data)
+new_colors = kmeans.cluster_centers_[kmeans.predict(data)]
+
+plot_pixels(data, colors=new_colors,
+            title="Reduced color space: 8 colors")
+```
+![cat3](cat3.png)
+
+#### Finalny obraz
+
+```
+cat_recolored = new_colors.reshape(cat.shape)
+
+fig, ax = plt.subplots(1, 2, figsize=(16, 6),
+                       subplot_kw=dict(xticks=[], yticks=[]))
+fig.subplots_adjust(wspace=0.05)
+ax[0].imshow(cat)
+ax[0].set_title('Original Image', size=16)
+ax[1].imshow(cat_recolored)
+ax[1].set_title('8-color Image', size=16);
+```
+![cat4](cat4.png)
+
+### Wnioski
+
+Jestem bardzo zadowolony z finalnego obrazu. Wszystkie najważniejsze kolory zostały zachowane, oprócz paru "prześwietleń" na stole, utraty koloru gotówki oraz wyrazistości kawioru zdjęcie jest bardzo podobne do oryginału.
+
+
+## Ćwiczenie 3
