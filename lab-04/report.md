@@ -237,7 +237,7 @@ Zadowalające wyniki uzyskałem dla następujących parametrów:
 ![15](circle15.png)
 
 ### Wnioski
-
+W przykładach, które analizowaliśmy, algorytmy KMeans oraz MeanShift nie sprawdziły się. Jednak DBSCAN jak i AgglomerativeClustering bardzo dobrze poradziły sobie z problemem. Wartym zapamiętania jest fakt, że w każdym z poprawnych wyników algorytmu AgglomerativeClustering pojawił się ten sam rodzaj parametru `linkage`: 'single', który wykorzystuje minimum z odległości.
 
 
 ## Ćwiczenie 2
@@ -370,7 +370,7 @@ Jak widać na wykresie, który dotyczy oceny zewnętrznej, klienci niskiego ryzy
 ### Która kolumna ze zbioru danych `mergedcustomers.csv` silnie wpływa na podział na klastry?
 
 Na podział na klastry bardzo silnie wpływa kolumna `PROFIT_YTD`, co jest szczególnie widoczne na poniższym wykresie. Zauważyć można bezpośredni związek między `PROFIT_YTD` a ryzykiem (kolory kropek zmieniające się wraz ze zmianą `PROFIT_YTD`)
-
+![risk4](risk4.png)
 
 
 
