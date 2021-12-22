@@ -1,5 +1,5 @@
 # Uczenie nienadzorowane - Raport
-> Podrzucam [link](https://github.com/dzbvn/PodstawySztucznejInteligencji/blob/main/lab-04/report.md) do Git'a, gdyby coś było źle sformatowane po wyeksportowaniu do pdf'a 
+> Tutaj [link](https://github.com/dzbvn/PodstawySztucznejInteligencji/blob/main/lab-04/report.md) do Git'a, gdyby coś było źle sformatowane po wyeksportowaniu do pdf'a 
 ## Ćwiczenie 1
 Poeksperymentuj z innymi typami zbiorów danych (patrz: księżyce i koła poniżej) i spróbuj określić, jaki typ algorytmu klasteryzacji sprawdzi się dla nich najlepiej. Pamiętaj o sprawdzeniu parametrów dla różnych algorytmów, np.:
 
@@ -374,7 +374,7 @@ Jak widać na wykresie, który dotyczy oceny zewnętrznej, klienci niskiego ryzy
 
 ### Która kolumna ze zbioru danych `mergedcustomers.csv` silnie wpływa na podział na klastry?
 
-Na podział na klastry bardzo silnie wpływa kolumna `PROFIT_YTD`, co jest widoczne na powyższych wykresach, a w szczególności na poniższym wykresie. Zauważyć można bezpośredni związek między `PROFIT_YTD` a ryzykiem (kolory kropek zmieniające się wraz ze zmianą `PROFIT_YTD`)
+Na podział na klastry bardzo silnie wpływa kolumna `PROFIT_YTD`, co jest widoczne na powyższych wykresach, a w szczególności na poniższym wykresie. Zauważyć można bezpośredni związek między `PROFIT_YTD` a ryzykiem (kolory kropek zmieniające się wraz ze zmianą `PROFIT_YTD`).
 ![risk6](risk6.PNG)
 
 
