@@ -367,7 +367,7 @@ Parametry:
 #### Wizualizacja 3D
 ![risk3](risk3.png)\
 
-![plot1](plot1.png)\
+![plot1](plot1.PNG)\
 ![plot2](plot2.PNG)
 ![plot3](plot3.PNG)
 ![plot4](plot4.PNG)
