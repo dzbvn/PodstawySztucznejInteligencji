@@ -22,7 +22,7 @@ y_pred = kmeans.fit_predict(X)
 centers = kmeans.cluster_centers_p
 show_scatter(X, y_pred, centers)
 ```
-![2](moon2.png)
+![2](/lab-04/data/moon2.png)
 
 #### Ustalamy liczbę klastrów
 
@@ -47,7 +47,7 @@ ax.set_xticks(range(0,10,1))
 ax.set_xlim(0,10)
 ax.set(xlabel='Cluster', ylabel='Inertia');
 ```
-![3](moon3.png)
+![3](/lab-04/data/moon3.png)
 
 Bardzo dobrze widoczne "kolanko" przy `Cluster` = 2.
 
@@ -58,7 +58,7 @@ y_pred = ms.fit_predict(X)
 centers = ms.cluster_centers_
 show_scatter(X, y_pred, centers)
 ```
-![4](moon4.png)
+![4](/lab-04/data/moon4.png)
 
 #### MeanShift z `bandwidth`
 
@@ -72,9 +72,9 @@ show_scatter(X, y_pred, centers)
 
 Najlepsze wyniki dla tego algorytmu obrazują następujące wykresy, odpowiednio dla\
 `quantile` = 0.35\
-![5](moon5.png)\
+![5](/lab-04/data/moon5.png)\
 oraz `quantile` = 0.6\
-![6](moon6.png)\
+![6](/lab-04/data/moon6.png)\
 Przy czym wynik drugi wydaje mi się lepszy, ponieważ chociaż jedna grupa jest odpowiednio przyporządkowana, podczas gdy dla pierwszego przypadku obie grupy są wymieszane.
 
 #### DBSCAN
@@ -85,7 +85,7 @@ y_pred = dbscan.fit_predict(X)
 show_scatter(X, y_pred)
 ```
 Zadowalający wynik uzyskałem dla `eps` = 0.3.\
-![7](moon7.png)
+![7](/lab-04/data/moon7.png)
 
 #### AgglomerativeClustering
 
@@ -98,27 +98,27 @@ Zadowalające wyniki uzyskałem dla następujących parametrów
 
 * `distance_threshold` = 0.2, `affinity` = 'euclidean', `linkage` = 'single'
 ##### Wynik
-![8](moon8.png)
+![8](/lab-04/data/moon8.png)
 ##### Dendrogram
-![9](moon9.png)
+![9](/lab-04/data/moon9.png)
 ---
 * `distance_threshold` = 0.3, `affinity` = 'l1', `linkage` = 'single'
 ##### Wynik
-![10](moon10.png)
+![10](/lab-04/data/moon10.png)
 ##### Dendrogram
-![11](moon11.png)
+![11](/lab-04/data/moon11.png)
 ---
 * `distance_threshold` = 0.2, `affinity` = 'l2', `linkage` = 'single'
 ##### Wynik
-![12](moon12.png)
+![12](/lab-04/data/moon12.png)
 ##### Dendrogram
-![13](moon13.png)
+![13](/lab-04/data/moon13.png)
 ---
 * `distance_threshold` = 0.25, `affinity` = 'manhattan', `linkage` = 'single'
 ##### Wynik
-![14](moon14.png)
+![14](/lab-04/data/moon14.png)
 ##### Dendrogram
-![15](moon15.png)
+![15](/lab-04/data/moon15.png)
 
 ### Koła
 
@@ -127,7 +127,7 @@ Zadowalające wyniki uzyskałem dla następujących parametrów
 X, y = make_circles(n_samples=200, factor=0.5, noise=0.05)
 show_scatter(X)
 ```
-![1](circle1.png)
+![1](/lab-04/data/circle1.png)
 
 #### KMeans
 ```
@@ -136,7 +136,7 @@ y_pred = kmeans.fit_predict(X)
 centers = kmeans.cluster_centers_
 show_scatter(X, y_pred, centers)
 ```
-![2](circle2.png)
+![2](/lab-04/data/circle2.png)
 
 #### Ustalamy liczbę klastrów
 
@@ -161,7 +161,7 @@ ax.set_xticks(range(0,10,1))
 ax.set_xlim(0,10)
 ax.set(xlabel='Cluster', ylabel='Inertia');
 ```
-![3](circle3.png)\
+![3](/lab-04/data/circle3.png)\
 "Kolanko" przy `Cluster` = 2 niestety nie jest tak dobrze widoczne jak dla poprzedniego przypadku.
 #### MeanShift
 ```
@@ -170,7 +170,7 @@ y_pred = ms.fit_predict(X)
 centers = ms.cluster_centers_
 show_scatter(X, y_pred, centers)
 ```
-![4](circle4.png)
+![4](/lab-04/data/circle4.png)
 
 #### MeanShift z `bandwidth`
 
@@ -184,11 +184,11 @@ show_scatter(X, y_pred, centers)
 
 Testowałem wyniki dla różnych wartości `quantile`, najlepsze wyniki przedstawiam poniżej.\
 `quantile` = 0.315\
-![5](circle5.png)\
+![5](/lab-04/data/circle5.png)\
 Mamy dwa klastry, jednak są one wymieszane.
 
 `quantile` = 0.32\
-![6](circle6.png)\
+![6](/lab-04/data/circle6.png)\
 Na piewszy rzut oka wynik wygląda zadowalająco, jednak jest tylko jeden klaster, który nie spełnia naszych wymagań.
 
 
@@ -201,7 +201,7 @@ y_pred = dbscan.fit_predict(X)
 show_scatter(X, y_pred)
 ```
 Zadowalający wynik uzyskałem dla `eps` = 0.25\
-![7](circle7.png)
+![7](/lab-04/data/circle7.png)
 
 #### AgglomerativeClustering
 
@@ -213,28 +213,28 @@ y_pred = ac.fit_predict(X)
 Zadowalające wyniki uzyskałem dla następujących parametrów:
 * `distance_threshold` = 0.2, `affinity` = 'euclidean', `linkage` = 'single'
 ##### Wynik
-![8](circle8.png)
+![8](/lab-04/data/circle8.png)
 ##### Dendrogram
-![9](circle9.png)
+![9](/lab-04/data/circle9.png)
 ---
 * `distance_threshold` = 0.3, `affinity` = 'l1', `linkage` = 'single'
 ##### Wynik
-![10](circle10.png)
+![10](/lab-04/data/circle10.png)
 ##### Dendrogram
-![11](circle11.png)
+![11](/lab-04/data/circle11.png)
 
 ---
 * `distance_threshold` = 0.2, `affinity` = 'l2', `linkage` = 'single'
 ##### Wynik
-![12](circle12.png)
+![12](/lab-04/data/circle12.png)
 ##### Dendrogram
-![13](circle13.png)
+![13](/lab-04/data/circle13.png)
 ---
 * `distance_threshold` = 0.25, `affinity` = 'manhattan', `linkage` = 'single'
 ##### Wynik
-![14](circle14.png)
+![14](/lab-04/data/circle14.png)
 ##### Dendrogram
-![15](circle15.png)
+![15](/lab-04/data/circle15.png)
 
 ### Wnioski
 W przykładach, które analizowaliśmy, algorytmy KMeans oraz MeanShift nie sprawdziły się. KMeans nie zadziałał, ponieważ polega na liczeniu odległości od centroidu. W przypadku algorytmu MeanShift zdarzało mu się błędnie oszacować liczbę klastrów. Jednak DBSCAN jak i AgglomerativeClustering bardzo dobrze poradziły sobie z problemem. Wartym zapamiętania jest fakt, że w każdym z poprawnych wyników algorytmu AgglomerativeClustering pojawił się ten sam rodzaj parametru `linkage`: 'single', który wykorzystuje minimum z odległości.
@@ -254,7 +254,7 @@ cat = io.imread("kot.jpg")
 ax = plt.axes(xticks=[], yticks=[])
 ax.imshow(cat);
 ```
-![cat](cat.png)
+![cat](/lab-04/data/cat.png)
 #### Wymiary obrazu
 
 ```
@@ -295,7 +295,7 @@ def plot_pixels(data, title, colors=None, N=10000):
 ```
 plot_pixels(data, title='Input color space: 16 million possible colors')
 ```
-![cat2](cat2.png)
+![cat2](/lab-04/data/cat2.png)
 
 #### Redukcja liczby kolorów
 Według serwisu [IMGonline.com](https://www.imgonline.com.ua/eng/unique-colors-number.php) mój obraz ma 47160 unikalnych kolorów. Zredukujemy tę liczbę do 8.
@@ -311,7 +311,7 @@ plot_pixels(data, colors=new_colors,
 end = time.time()
 res = end-start
 ```
-![cat3](cat3.png)
+![cat3](/lab-04/data/cat3.png)
 
 Do redukcji kolorów podszedłem dwukrotnie: 
 * używając algorytmu MiniBatchKMeans\
@@ -334,7 +334,7 @@ ax[0].set_title('Original Image', size=16)
 ax[1].imshow(cat_recolored)
 ax[1].set_title('8-color Image', size=16);
 ```
-![cat4](cat4.png)
+![cat4](/lab-04/data/cat4.png)
 
 ### Wnioski
 
@@ -361,21 +361,21 @@ Parametry:
 ### Wyniki
 
 #### Ocena zewnętrzna
-![risk1](risk1.png)\
+![risk1](/lab-04/data/risk1.png)\
 Jak widać na wykresie, który dotyczy oceny zewnętrznej, klienci niskiego ryzyka zostali bardzo dobrze dopasowani, podobnie jak klienci z grupy wysokiego ryzyka. Problem pojawia się w środkowym słupku, w którym klienci wysokiego i średniego ryzyka zostali złączeni, jednak nie udało się uzyskać lepszego wyniku. Może być to związane z faktem, o którym wspomniałem na początku - uczenie nienadzorowane nie będzie najlepszym predykatorem dla naszego przypadku.
 #### Dendrogram
-![risk2](risk2.png)
+![risk2](/lab-04/data/risk2.png)
 #### Wizualizacja 3D
-![risk3](risk3.png)\
-![plot1](plot1.PNG.png)
-![plot2](plot2.PNG)
-![plot3](plot3.PNG)
-![plot4](plot4.PNG)
+![risk3](/lab-04/data/risk3.png)\
+![plot1](/lab-04/data/plot1.PNG.png)
+![plot2](/lab-04/data/plot2.PNG)
+![plot3](/lab-04/data/plot3.PNG)
+![plot4](/lab-04/data/plot4.PNG)
 
 ### Która kolumna ze zbioru danych `mergedcustomers.csv` silnie wpływa na podział na klastry?
 
 Na podział na klastry bardzo silnie wpływa kolumna `PROFIT_YTD`, co jest widoczne na powyższych wykresach, a w szczególności na poniższym wykresie. Zauważyć można bezpośredni związek między `PROFIT_YTD` a ryzykiem (kolory kropek zmieniające się wraz ze zmianą `PROFIT_YTD`).
-![risk6](risk6.PNG)
+![risk6](/lab-04/data/risk6.PNG)
 
 
 
