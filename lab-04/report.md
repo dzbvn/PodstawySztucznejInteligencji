@@ -367,7 +367,7 @@ Jak widać na wykresie, który dotyczy oceny zewnętrznej, klienci niskiego ryzy
 ![risk2](/lab-04/data/risk2.png)
 #### Wizualizacja 3D
 ![risk3](/lab-04/data/risk3.png)\
-![plot1](/lab-04/data/plot1.PNG.png)
+![plot1](/lab-04/data/plot1.png)
 ![plot2](/lab-04/data/plot2.PNG)
 ![plot3](/lab-04/data/plot3.PNG)
 ![plot4](/lab-04/data/plot4.PNG)
