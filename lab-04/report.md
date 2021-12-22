@@ -361,22 +361,20 @@ Parametry:
 ### Wyniki
 
 #### Ocena zewnętrzna
-![risk1](risk1.png)
+![risk1](risk1.png)\
+Jak widać na wykresie, który dotyczy oceny zewnętrznej, klienci niskiego ryzyka zostali bardzo dobrze dopasowani, podobnie jak klienci z grupy wysokiego ryzyka. Problem pojawia się w środkowym słupku, w którym klienci wysokiego i średniego ryzyka zostali złączeni, jednak nie udało się uzyskać lepszego wyniku. Może być to związane z faktem, o którym wspomniałem na początku - uczenie nienadzorowane nie będzie najlepszym predykatorem dla naszego przypadku.
 #### Dendrogram
 ![risk2](risk2.png)
 #### Wizualizacja 3D
 ![risk3](risk3.png)\
-
 ![plot1](plot1.PNG.png)
 ![plot2](plot2.PNG)
 ![plot3](plot3.PNG)
 ![plot4](plot4.PNG)
-Jak widać na wykresie, który dotyczy oceny zewnętrznej, klienci niskiego ryzyka zostali bardzo dobrze dopasowani, podobnie jak klienci z grupy wysokiego ryzyka. Problem pojawia się w środkowym słupku, w którym klienci wysokiego i średniego ryzyka zostali złączeni, jednak nie udało się uzyskać lepszego wyniku. Może być to związane z faktem, o którym wspomniałem na początku - uczenie nienadzorowane nie będzie najlepszym predykatorem dla naszego przypadku.
-
 
 ### Która kolumna ze zbioru danych `mergedcustomers.csv` silnie wpływa na podział na klastry?
 
-Na podział na klastry bardzo silnie wpływa kolumna `PROFIT_YTD`, co jest szczególnie widoczne na poniższym wykresie. Zauważyć można bezpośredni związek między `PROFIT_YTD` a ryzykiem (kolory kropek zmieniające się wraz ze zmianą `PROFIT_YTD`)
+Na podział na klastry bardzo silnie wpływa kolumna `PROFIT_YTD`, co jest widoczne na powyższych wykresach, a szczególnie na poniższym wykresie. Zauważyć można bezpośredni związek między `PROFIT_YTD` a ryzykiem (kolory kropek zmieniające się wraz ze zmianą `PROFIT_YTD`)
 ![risk6](risk6.PNG)
 
 
