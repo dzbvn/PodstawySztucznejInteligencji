@@ -1,5 +1,5 @@
 # Uczenie nienadzorowane - Raport
-
+> Podrzucam [link](https://github.com/dzbvn/PodstawySztucznejInteligencji/blob/main/lab-04/report.md) do Git'a, gdyby coś było źle sformatowane po wyeksportowaniu do pdf'a 
 ## Ćwiczenie 1
 Poeksperymentuj z innymi typami zbiorów danych (patrz: księżyce i koła poniżej) i spróbuj określić, jaki typ algorytmu klasteryzacji sprawdzi się dla nich najlepiej. Pamiętaj o sprawdzeniu parametrów dla różnych algorytmów, np.:
 
@@ -161,7 +161,7 @@ ax.set_xticks(range(0,10,1))
 ax.set_xlim(0,10)
 ax.set(xlabel='Cluster', ylabel='Inertia');
 ```
-![3](circle3.png)
+![3](circle3.png)\
 "Kolanko" przy `Cluster` = 2 niestety nie jest tak dobrze widoczne jak dla poprzedniego przypadku.
 #### MeanShift
 ```
