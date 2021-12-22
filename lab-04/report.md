@@ -49,6 +49,8 @@ ax.set(xlabel='Cluster', ylabel='Inertia');
 ```
 ![3](moon3.png)
 
+Widoczne "kolanko" przy `Cluster` = 2
+
 #### MeanShift
 ```
 ms = MeanShift(cluster_all=False)
