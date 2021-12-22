@@ -370,7 +370,7 @@ Jak widać na wykresie, który dotyczy oceny zewnętrznej, klienci niskiego ryzy
 ### Która kolumna ze zbioru danych `mergedcustomers.csv` silnie wpływa na podział na klastry?
 
 Na podział na klastry bardzo silnie wpływa kolumna `PROFIT_YTD`, co jest szczególnie widoczne na poniższym wykresie. Zauważyć można bezpośredni związek między `PROFIT_YTD` a ryzykiem (kolory kropek zmieniające się wraz ze zmianą `PROFIT_YTD`)
-![risk5](risk5.png)
+![risk6](risk6.png)
 
 
 
