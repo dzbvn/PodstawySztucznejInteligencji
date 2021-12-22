@@ -49,6 +49,8 @@ ax.set(xlabel='Cluster', ylabel='Inertia');
 ```
 ![3](moon3.png)
 
+Bardzo dobrze widoczne "kolanko" przy `Cluster` = 2.
+
 #### MeanShift
 ```
 ms = MeanShift(cluster_all=False)
@@ -68,7 +70,7 @@ centers = ms.cluster_centers_
 show_scatter(X, y_pred, centers)
 ```
 
-Najlepszymi wynikami dla tego algorytmu obrazują następujące wykresy, odpowiednio dla\
+Najlepsze wyniki dla tego algorytmu obrazują następujące wykresy, odpowiednio dla\
 `quantile` = 0.35\
 ![5](moon5.png)\
 oraz `quantile` = 0.6\
@@ -82,7 +84,7 @@ dbscan = DBSCAN(eps=0.3)
 y_pred = dbscan.fit_predict(X)
 show_scatter(X, y_pred)
 ```
-Zadowalający wynik uzyskałem dla `eps` = 0.3\
+Zadowalający wynik uzyskałem dla `eps` = 0.3.\
 ![7](moon7.png)
 
 #### AgglomerativeClustering
@@ -93,24 +95,25 @@ ac = AgglomerativeClustering(n_clusters=None, distance_threshold=0.2,
 y_pred = ac.fit_predict(X)
 ```
 Zadowalające wyniki uzyskałem dla następujących parametrów
+
 * `distance_threshold` = 0.2, `affinity` = 'euclidean', `linkage` = 'single'
 ##### Wynik
 ![8](moon8.png)
 ##### Dendrogram
 ![9](moon9.png)
-
+---
 * `distance_threshold` = 0.3, `affinity` = 'l1', `linkage` = 'single'
 ##### Wynik
 ![10](moon10.png)
 ##### Dendrogram
 ![11](moon11.png)
-
+---
 * `distance_threshold` = 0.2, `affinity` = 'l2', `linkage` = 'single'
 ##### Wynik
 ![12](moon12.png)
 ##### Dendrogram
 ![13](moon13.png)
-
+---
 * `distance_threshold` = 0.25, `affinity` = 'manhattan', `linkage` = 'single'
 ##### Wynik
 ![14](moon14.png)
@@ -159,7 +162,7 @@ ax.set_xlim(0,10)
 ax.set(xlabel='Cluster', ylabel='Inertia');
 ```
 ![3](circle3.png)
-
+"Kolanko" przy `Cluster` = 2 niestety nie jest tak dobrze widoczne jak dla poprzedniego przypadku.
 #### MeanShift
 ```
 ms = MeanShift(cluster_all=False)
@@ -179,14 +182,14 @@ centers = ms.cluster_centers_
 show_scatter(X, y_pred, centers)
 ```
 
-Testowałem wyniki dla różnych wartości `quantile`, najlepsze wyniki przedstawiam poniżej\
+Testowałem wyniki dla różnych wartości `quantile`, najlepsze wyniki przedstawiam poniżej.\
 `quantile` = 0.315\
 ![5](circle5.png)\
-Mamy dwa klastry, jednak są one wymieszane
+Mamy dwa klastry, jednak są one wymieszane.
 
 `quantile` = 0.32\
 ![6](circle6.png)\
-Na piewszy rzut oka wynik wygląda zadowalająco, jednak jest tylko jeden klaster, co nie spełnia naszych wymagań.
+Na piewszy rzut oka wynik wygląda zadowalająco, jednak jest tylko jeden klaster, który nie spełnia naszych wymagań.
 
 
 
@@ -213,25 +216,27 @@ Zadowalające wyniki uzyskałem dla następujących parametrów:
 ![8](circle8.png)
 ##### Dendrogram
 ![9](circle9.png)
-
+---
 * `distance_threshold` = 0.3, `affinity` = 'l1', `linkage` = 'single'
 ##### Wynik
 ![10](circle10.png)
 ##### Dendrogram
 ![11](circle11.png)
 
-
+---
 * `distance_threshold` = 0.2, `affinity` = 'l2', `linkage` = 'single'
 ##### Wynik
 ![12](circle12.png)
 ##### Dendrogram
 ![13](circle13.png)
-
+---
 * `distance_threshold` = 0.25, `affinity` = 'manhattan', `linkage` = 'single'
 ##### Wynik
 ![14](circle14.png)
 ##### Dendrogram
 ![15](circle15.png)
+
+### Wnioski
 
 
 
@@ -365,3 +370,9 @@ Jak widać na wykresie, który dotyczy oceny zewnętrznej, klienci niskiego ryzy
 ### Która kolumna ze zbioru danych `mergedcustomers.csv` silnie wpływa na podział na klastry?
 
 Na podział na klastry bardzo silnie wpływa kolumna `PROFIT_YTD`, co jest szczególnie widoczne na poniższym wykresie. Zauważyć można bezpośredni związek między `PROFIT_YTD` a ryzykiem (kolory kropek zmieniające się wraz ze zmianą `PROFIT_YTD`)
+
+
+
+
+
+
