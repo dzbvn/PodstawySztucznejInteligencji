@@ -49,8 +49,6 @@ ax.set(xlabel='Cluster', ylabel='Inertia');
 ```
 ![3](moon3.png)
 
-Widoczne "kolanko" przy `Cluster` = 2
-
 #### MeanShift
 ```
 ms = MeanShift(cluster_all=False)
@@ -161,8 +159,6 @@ ax.set_xlim(0,10)
 ax.set(xlabel='Cluster', ylabel='Inertia');
 ```
 ![3](circle3.png)
-
-Tutaj "kolanko" przy `Cluster` = 2 jest słabiej widoczne niż w poprzednim przypadku
 
 #### MeanShift
 ```
@@ -297,15 +293,26 @@ plot_pixels(data, title='Input color space: 16 million possible colors')
 Według serwisu [IMGonline.com](https://www.imgonline.com.ua/eng/unique-colors-number.php) mój obraz ma 47160 unikalnych kolorów. Zredukujemy tę liczbę do 8.
 
 ```
-kmeans = KMeans(n_clusters=8)
+start = time.time()
+kmeans = MiniBatchKMeans(n_clusters=8)
 kmeans.fit(data)
 new_colors = kmeans.cluster_centers_[kmeans.predict(data)]
 
 plot_pixels(data, colors=new_colors,
             title="Reduced color space: 8 colors")
+end = time.time()
+res = end-start
 ```
 ![cat3](cat3.png)
 
+Do redukcji kolorów podszedłem dwukrotnie: 
+* używając algorytmu MiniBatchKMeans\
+czas: 5.3s
+
+* używając algorytmu KMeans\
+czas: 1.13s
+
+Zdecydowana przewaga MiniBatchKMeans
 #### Finalny obraz
 
 ```
@@ -327,3 +334,34 @@ Jestem bardzo zadowolony z finalnego obrazu. Wszystkie najważniejsze kolory zos
 
 
 ## Ćwiczenie 3
+
+Odpowiedzieć i uzasadnić (na bazie odpowiednich wykresów lub wyników algorytmów zamieszczonych w raporcie), która/e kolumna/e ze zbioru danych mergedcustomers.csv silnie wpływa/ją na podziały na klastry, jak również zamieścić przykład klastrowania, w którym uzyskano w miarę dobre rozróżnienie klientów ze względu na ryzyko Low/High (z uzasadnieniem).
+
+### Modyfikując wartości parametrów algorytmu `distance_threshold` -- odległość i `affinity` -- typ metryki: 'manhattan' lub 'euclidean', ew. `linkage`, wybierz parametry, które Twoim zdaniem najlepiej odwzorowują rzeczywiste wartości. Wyniki umieść w swoim raporcie.
+
+```
+from sklearn.cluster import AgglomerativeClustering
+ac = AgglomerativeClustering(n_clusters=None, distance_threshold=11000, 
+                             affinity='euclidean', linkage='ward')
+predicted = ac.fit_predict(df_churn.values)
+```
+Biorąc pod uwagę fakt, że uczenie nienadzorowane nie będzie najlepszym predykatorem w takim przypadku oraz stosując metodę prób i błędów, udało mi się uzyskać w miarę zadowalający wynik.
+Parametry:
+* ` distance_threshold` = 11000 
+* `affinity` = 'euclidean'
+* `linkage` = 'ward'
+### Wyniki
+
+#### Ocena zewnętrzna
+![risk1](risk1.png)
+#### Dendrogram
+![risk2](risk2.png)
+#### Wizualizacja 3D
+![risk3](risk3.png)
+
+Jak widać na wykresie, który dotyczy oceny zewnętrznej, klienci niskiego ryzyka zostali bardzo dobrze dopasowani, podobnie jak klienci z grupy wysokiego ryzyka. Problem pojawia się w środkowym słupku, w którym klienci wysokiego i średnioego ryzyka zostali złączeni, jednak nie udało się uzyskać lepszego wyniku. Może być to związane z faktem, o którym wspomniałem na początku - uczenie nienadzorowane nie będzie najlepszym predykatorem.
+
+
+### Która kolumna ze zbioru danych `mergedcustomers.csv` silnie wpływa na podział na klastry?
+
+Na podział na klastry bardzo silnie wpływa kolumna `PROFIT_YTD`, co jest szczególnie widoczne na poniższym wykresie. Zauważyć można bezpośredni związek między `PROFIT_YTD` a ryzykiem (kolory kropek zmieniające się wraz ze zmianą `PROFIT_YTD`)
