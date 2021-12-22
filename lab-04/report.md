@@ -162,6 +162,8 @@ ax.set(xlabel='Cluster', ylabel='Inertia');
 ```
 ![3](circle3.png)
 
+Tutaj "kolanko" przy `Cluster` = 2 jest słabiej widoczne niż w poprzednim przypadku
+
 #### MeanShift
 ```
 ms = MeanShift(cluster_all=False)
