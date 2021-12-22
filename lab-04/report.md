@@ -13,7 +13,7 @@ Poeksperymentuj z innymi typami zbiorów danych (patrz: księżyce i koła poni�
 X, y = make_moons(n_samples=200, noise=0.05)
 show_scatter(X)
 ```
-![1](\data\moon1.png)
+![1](/data/moon1.png)
 
 #### KMeans
 ```
