@@ -366,8 +366,11 @@ Parametry:
 ![risk2](risk2.png)
 #### Wizualizacja 3D
 ![risk3](risk3.png)\
-![plot1](plot1.png)
 
+![plot1](plot1.png)\
+![plot2](plot2.png)
+![plot3](plot3.png)
+![plot4](plot4.png)
 Jak widać na wykresie, który dotyczy oceny zewnętrznej, klienci niskiego ryzyka zostali bardzo dobrze dopasowani, podobnie jak klienci z grupy wysokiego ryzyka. Problem pojawia się w środkowym słupku, w którym klienci wysokiego i średniego ryzyka zostali złączeni, jednak nie udało się uzyskać lepszego wyniku. Może być to związane z faktem, o którym wspomniałem na początku - uczenie nienadzorowane nie będzie najlepszym predykatorem dla naszego przypadku.
 
 
