@@ -237,12 +237,15 @@ Zadowalające wyniki uzyskałem dla następujących parametrów:
 ![15](circle15.png)
 
 ### Wnioski
-W przykładach, które analizowaliśmy, algorytmy KMeans oraz MeanShift nie sprawdziły się. Jednak DBSCAN jak i AgglomerativeClustering bardzo dobrze poradziły sobie z problemem. Wartym zapamiętania jest fakt, że w każdym z poprawnych wyników algorytmu AgglomerativeClustering pojawił się ten sam rodzaj parametru `linkage`: 'single', który wykorzystuje minimum z odległości.
+W przykładach, które analizowaliśmy, algorytmy KMeans oraz MeanShift nie sprawdziły się. KMeans nie zadziałał, ponieważ polega na liczeniu odległości od centroidu. W przypadku algorytmu MeanShift zdarzało mu się błędnie oszacować liczbę klastrów. Jednak DBSCAN jak i AgglomerativeClustering bardzo dobrze poradziły sobie z problemem. Wartym zapamiętania jest fakt, że w każdym z poprawnych wyników algorytmu AgglomerativeClustering pojawił się ten sam rodzaj parametru `linkage`: 'single', który wykorzystuje minimum z odległości.
 
 
 ## Ćwiczenie 2
 Klasteryzacji możemy użyć do różnych celów. Niezbyt typowym, ale możliwym jest np. kompresja kolorów obrazu.
 Wybrać obraz, zredukować jego kolory do mniej niż 10 kolorów, ale w taki sposób, aby uzyskany obraz bardzo przypominał oryginalny. Należy podać nazwę obrazu, informację o liczbie kolorów, a także wkleić zarówno oryginalny, jak i skompresowany obraz.
+
+#### Nazwa obrazu
+cat_caviar.jpg [`źródło`](https://cdn.theatlantic.com/media/mt/science/cat_caviar.jpg)
 
 #### Wczytujemy obraz
 ```
@@ -362,9 +365,10 @@ Parametry:
 #### Dendrogram
 ![risk2](risk2.png)
 #### Wizualizacja 3D
-![risk3](risk3.png)
+![risk3](risk3.png)\
+![plot1](plot1.png)
 
-Jak widać na wykresie, który dotyczy oceny zewnętrznej, klienci niskiego ryzyka zostali bardzo dobrze dopasowani, podobnie jak klienci z grupy wysokiego ryzyka. Problem pojawia się w środkowym słupku, w którym klienci wysokiego i średnioego ryzyka zostali złączeni, jednak nie udało się uzyskać lepszego wyniku. Może być to związane z faktem, o którym wspomniałem na początku - uczenie nienadzorowane nie będzie najlepszym predykatorem.
+Jak widać na wykresie, który dotyczy oceny zewnętrznej, klienci niskiego ryzyka zostali bardzo dobrze dopasowani, podobnie jak klienci z grupy wysokiego ryzyka. Problem pojawia się w środkowym słupku, w którym klienci wysokiego i średniego ryzyka zostali złączeni, jednak nie udało się uzyskać lepszego wyniku. Może być to związane z faktem, o którym wspomniałem na początku - uczenie nienadzorowane nie będzie najlepszym predykatorem dla naszego przypadku.
 
 
 ### Która kolumna ze zbioru danych `mergedcustomers.csv` silnie wpływa na podział na klastry?
