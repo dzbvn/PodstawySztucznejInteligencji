@@ -19,8 +19,7 @@ show_scatter(X)
 ```
 kmeans = KMeans(n_clusters=2)
 y_pred = kmeans.fit_predict(X)
-centers = kmeans.cluster_centers_
-print(kmeans.inertia_)
+centers = kmeans.cluster_centers_p
 show_scatter(X, y_pred, centers)
 ```
 ![2](moon2.png)
@@ -55,7 +54,6 @@ ax.set(xlabel='Cluster', ylabel='Inertia');
 ms = MeanShift(cluster_all=False)
 y_pred = ms.fit_predict(X)
 centers = ms.cluster_centers_
-print("Number of clusters: ", len(centers))
 show_scatter(X, y_pred, centers)
 ```
 ![4](moon4.png)
@@ -70,7 +68,8 @@ centers = ms.cluster_centers_
 show_scatter(X, y_pred, centers)
 ```
 
-Najlepszymi wynikami dla tego algorytmu obrazują następujące wykresy, odpowiednio dla `quantile` = 0.35\
+Najlepszymi wynikami dla tego algorytmu obrazują następujące wykresy, odpowiednio dla\
+`quantile` = 0.35\
 ![5](moon5.png)\
 oraz `quantile` = 0.6\
 ![6](moon6.png)\
@@ -81,8 +80,6 @@ Przy czym wynik drugi wydaje mi się lepszy, ponieważ chociaż jedna grupa jest
 ```
 dbscan = DBSCAN(eps=0.3)
 y_pred = dbscan.fit_predict(X)
-print('Number of clusters:', len(set(y_pred))-(1 if -1 in y_pred else 0))
-print('Number of outliers:', list(y_pred).count(-1))
 show_scatter(X, y_pred)
 ```
 Zadowalający wynik uzyskałem dla `eps` = 0.3\
@@ -94,28 +91,27 @@ Zadowalający wynik uzyskałem dla `eps` = 0.3\
 ac = AgglomerativeClustering(n_clusters=None, distance_threshold=0.2, 
                              affinity='euclidean', linkage='single')
 y_pred = ac.fit_predict(X)
-print('Number of clusters:', len(set(y_pred)))
 ```
 Zadowalające wyniki uzyskałem dla następujących parametrów
-* `distance_threshold` = 0.2, `affinity` = 'euclidean', `linkage` = 'single'\
+* `distance_threshold` = 0.2, `affinity` = 'euclidean', `linkage` = 'single'
 ##### Wynik
 ![8](moon8.png)
 ##### Dendrogram
 ![9](moon9.png)
 
-* `distance_threshold` = 0.3, `affinity` = 'l1', `linkage` = 'single'\
+* `distance_threshold` = 0.3, `affinity` = 'l1', `linkage` = 'single'
 ##### Wynik
 ![10](moon10.png)
 ##### Dendrogram
 ![11](moon11.png)
 
-* `distance_threshold` = 0.2, `affinity` = 'l2', `linkage` = 'single'\
+* `distance_threshold` = 0.2, `affinity` = 'l2', `linkage` = 'single'
 ##### Wynik
 ![12](moon12.png)
 ##### Dendrogram
 ![13](moon13.png)
 
-* `distance_threshold` = 0.25, `affinity` = 'manhattan', `linkage` = 'single'\
+* `distance_threshold` = 0.25, `affinity` = 'manhattan', `linkage` = 'single'
 ##### Wynik
 ![14](moon14.png)
 ##### Dendrogram
@@ -135,7 +131,6 @@ show_scatter(X)
 kmeans = KMeans(n_clusters=2)
 y_pred = kmeans.fit_predict(X)
 centers = kmeans.cluster_centers_
-print(kmeans.inertia_)
 show_scatter(X, y_pred, centers)
 ```
 ![2](circle2.png)
@@ -170,7 +165,123 @@ ax.set(xlabel='Cluster', ylabel='Inertia');
 ms = MeanShift(cluster_all=False)
 y_pred = ms.fit_predict(X)
 centers = ms.cluster_centers_
-print("Number of clusters: ", len(centers))
 show_scatter(X, y_pred, centers)
 ```
 ![4](circle4.png)
+
+#### MeanShift z `bandwidth`
+
+```
+bandwidth = estimate_bandwidth(X, quantile=.315, n_samples=200) 
+ms = MeanShift(cluster_all=False, bandwidth=bandwidth)
+y_pred = ms.fit_predict(X)
+centers = ms.cluster_centers_
+show_scatter(X, y_pred, centers)
+```
+
+Testowałem wyniki dla różnych wartości `quantile`, najlepsze wyniki przedstawiam poniżej\
+`quantile` = 0.315\
+![5](circle5.png)\
+Mamy dwa klastry, jednak są one wymieszane
+
+`quantile` = 0.32\
+![6](circle6.png)\
+Na piewszy rzut oka wynik wygląda zadowalająco, jednak jest tylko jeden klaster, co nie spełnia naszych wymagań.
+
+
+
+#### DBSCAN
+
+```
+dbscan = DBSCAN(eps=0.25)
+y_pred = dbscan.fit_predict(X)
+show_scatter(X, y_pred)
+```
+Zadowalający wynik uzyskałem dla `eps` = 0.25\
+![7](circle7.png)
+
+#### AgglomerativeClustering
+
+```
+ac = AgglomerativeClustering(n_clusters=None, distance_threshold=0.2, 
+                             affinity='euclidean', linkage='single')
+y_pred = ac.fit_predict(X)
+```
+Zadowalające wyniki uzyskałem dla następujących parametrów:
+* `distance_threshold` = 0.2, `affinity` = 'euclidean', `linkage` = 'single'
+##### Wynik
+![8](circle8.png)
+##### Dendrogram
+![9](circle9.png)
+
+* `distance_threshold` = 0.3, `affinity` = 'l1', `linkage` = 'single'
+##### Wynik
+![10](circle10.png)
+##### Dendrogram
+![11](circle11.png)
+
+
+* `distance_threshold` = 0.2, `affinity` = 'l2', `linkage` = 'single'
+##### Wynik
+![12](circle12.png)
+##### Dendrogram
+![13](circle13.png)
+
+* `distance_threshold` = 0.25, `affinity` = 'manhattan', `linkage` = 'single'
+##### Wynik
+![14](circle14.png)
+##### Dendrogram
+![15](circle15.png)
+
+
+
+## Ćwiczenie 2
+Klasteryzacji możemy użyć do różnych celów. Niezbyt typowym, ale możliwym jest np. kompresja kolorów obrazu.
+Wybrać obraz, zredukować jego kolory do mniej niż 10 kolorów, ale w taki sposób, aby uzyskany obraz bardzo przypominał oryginalny. Należy podać nazwę obrazu, informację o liczbie kolorów, a także wkleić zarówno oryginalny, jak i skompresowany obraz.
+
+#### Wczytujemy obraz
+```
+from skimage import io
+cat = io.imread("kot.jpg")
+ax = plt.axes(xticks=[], yticks=[])
+ax.imshow(cat);
+```
+![cat](cat.png)
+#### Wymiary obrazu
+
+```
+cat.shape
+```
+
+#### Przekształcamy dane i skalujemy kolory
+```
+data = cat / 255.0 # use 0...1 scale
+data = data.reshape(418 * 615, 3)
+data.shape
+```
+
+#### Wizualizacja pikseli
+```
+def plot_pixels(data, title, colors=None, N=10000):
+    if colors is None:
+        colors = data
+    
+    # choose a random subset
+    rng = np.random.RandomState(0)
+    i = rng.permutation(data.shape[0])[:N]
+    colors = colors[i]
+    R, G, B = data[i].T
+    
+    fig, ax = plt.subplots(1, 2, figsize=(16, 6))
+    ax[0].scatter(R, G, color=colors, marker='.')
+    ax[0].set(xlabel='Red', ylabel='Green', xlim=(0, 1), ylim=(0, 1))
+
+    ax[1].scatter(R, B, color=colors, marker='.')
+    ax[1].set(xlabel='Red', ylabel='Blue', xlim=(0, 1), ylim=(0, 1))
+
+    fig.suptitle(title, size=20);
+```
+
+```
+plot_pixels(data, title='Input color space: 16 million possible colors')
+```
