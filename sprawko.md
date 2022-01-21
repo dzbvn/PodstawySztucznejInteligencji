@@ -252,9 +252,13 @@ Przekodowanie jest konieczne tylko dla kolumny class, ponieważ reszta klas posi
 ## Część 7:
 ### Wklej rysunki 2 neuronów dla AND i OR.
 ![This is a alt text.](AND.PNG)
-![This is a alt text.](ORsample.PNG)
+![This is a alt text.](OR.PNG)
 
 ### Wklej zrzuty ekranu wyuczonych sieci dla 4 datasetów ze wskazanej strony.
+![This is a alt text.](p1.PNG)
+![This is a alt text.](p2.PNG)
+![This is a alt text.](p3.PNG)
+![This is a alt text.](p4.PNG)
 
 ### Do czego służy funkcja train_test_split()? Po co ją wykorzystujemy?
 Funkcja `train_test_split()` dzieli array'e lub macierze na losowe zestawy treningowe i testowe.
