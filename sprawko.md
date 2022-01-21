@@ -251,8 +251,8 @@ Przekodowanie jest konieczne tylko dla kolumny class, ponieważ reszta klas posi
 
 ## Część 7:
 ### Wklej rysunki 2 neuronów dla AND i OR.
-![This is a alt text.](/AND.png)
-![This is a alt text.](/ORsample.png)
+![This is a alt text.](AND.PNG)
+![This is a alt text.](ORsample.PNG)
 
 ### Wklej zrzuty ekranu wyuczonych sieci dla 4 datasetów ze wskazanej strony.
 
