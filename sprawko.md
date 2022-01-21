@@ -249,11 +249,28 @@ Przekodowanie jest konieczne tylko dla kolumny class, ponieważ reszta klas posi
 ### Umieść graficzne reprezentacje drzew dla iris (przynajmniej 1 na modyfikowany parametr – podaj wartości).
 
 
+## Część 7:
+### Wklej rysunki 2 neuronów dla AND i OR.
+![This is a alt text.](/AND.png)
+![This is a alt text.](/ORsample.png)
+
+### Wklej zrzuty ekranu wyuczonych sieci dla 4 datasetów ze wskazanej strony.
+
+### Do czego służy funkcja train_test_split()? Po co ją wykorzystujemy?
+Funkcja `train_test_split()` dzieli array'e lub macierze na losowe zestawy treningowe i testowe.
+Używamy jej, żeby z zestawu danych otrzymać zbiory testowe i trenigowe, dzięki którym będziemy w stanie ocenić skuteczność naszej sieci.
+
+### Z ilu warstw składa się utworzona sieć? Która funkcja odpowiada za dodawanie warstw?
+Utworzona sieć składa się z 3 warstw, funkcja odpowiadająca za dodawanie warst to .add() wywołana na modelu.
+
+### Co oznacza batch_size? Czym jest liczba epok? Ile wynoszą te parametry w naszym przykładzie?
+- `BATCH_SIZE` oznacza liczbę próbek, które podawane są jednocześnie, po czym następuje aktualizacja sieci, dla naszego przykładu to 16
+- `NB_EPOCHS` oznacz liczbę powtórzeń uczenia całym zbiorem danych treningowych, dla naszego przykładu to 1000
 
 
-
-
-
+### Jakie funkcje aktywacji zastosowano? Czym jest funkcja aktywacji?
+Zastosowaliśmy dwie funkcje aktywacji, `ReLU` (rektyfikowana jednostka liniowa) oraz `sigmoid`.
+Funkcja aktywacji to funkcja, według której obliczana jest wartość wyjścia neuronów sieci neuronowej po agregacji danych wejściowych z uwzględnieniem wag.
 
 
 
