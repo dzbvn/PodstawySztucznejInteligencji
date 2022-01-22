@@ -1,5 +1,5 @@
 Imię i nazwisko: Szymon Klempert\
-Grupa (godzina, tydzień): 
+Grupa (godzina, tydzień): 16:00, (chyba) drugi
 
 ## Podstawy Sztucznej Inteligencji
 # Uczenie Nadzorowane – Sprawozdanie
@@ -7,19 +7,22 @@ Grupa (godzina, tydzień):
 
 ## Część 1:
 ### Czym różnią się uczenie nadzorowane, uczenie nienadzorowane i uczenie ze wzmocnieniem?
-Uczenie nadzorowane opiera się na przykładach, działamy na danych wejściowych i wyjściowych, które posiadają odpowiednie etykiety i na nich trenujemy model.
+
+- Uczenie nadzorowane opiera się na przykładach, działamy na danych wejściowych i wyjściowych, które posiadają odpowiednie etykiety i na nich trenujemy model.
 
 - W uczeniu nienadzorowanym nie dostarczamy przykładowych odpowiedzi, model sam próbuje znaleźć jakąś korelację między danymi i nadać im odpowiednie etykiety.
 
 - W uczeniu ze wzmocnieniem dostarczamy modelowi tylko zbiór możliwych działań i reguł. Z każdym krokiem model otrzymuje informacje zwrotną z poprzedniego kroku i na podstawie doświadczen i nagród uczy się.
 
 ### Czym różni się regresja od klasyfikacji?
-Klasyfikacja przewiduje nieuporządkowane dane i mapuje je na dyskretne etykiety klas, a regresja przewiduje dane uporządkowane i mapuje je na ciągłe wartości.
+
+- Klasyfikacja przewiduje nieuporządkowane dane i mapuje je na dyskretne etykiety klas, a regresja przewiduje dane uporządkowane i mapuje je na ciągłe wartości.
+
 ### Co to jest regresja liniowa, drzewo decyzyjne i sieć neuronowa?
+
 - Regresja liniowa jest metodą statystyczną pozwalająca ocenić wpływ wielu różnych cech (nazywanych zmiennymi objaśniającymi) na pewną cechę, która szczególnie nas interesuje (nazywaną zmienną objaśnianą). Zakłada ona, że zależność pomiędzy nimi jest zależnością liniową. Funkcja regresji przyjmuje postać funkcji liniowej.
 
-- Drzewo decyzyjne to metoda, która jest graficznym zapisem analizy problemu. Służy dokonaniu właściwego wyboru i podjęciu decyzji z pełną świadomością jej skutków.
-A decision tree is a decision support tool that uses a tree-like model of decisions and their possible consequences, including chance event outcomes, resource costs, and utility. It is one way to display an algorithm that only contains conditional control statements.
+- Drzewo decyzyjne to metoda, która jest graficznym zapisem analizy problemu przypominającyn drzewo. Służy dokonaniu właściwego wyboru i podjęciu decyzji z pełną świadomością jej skutków. Jest sposobem zobrazowania algorytmu, który opiera się na conditional'ach.
 
 - Sieci neuronowe są częścią funkcji uczenia maszynowego i stanowią podstawę algorytmów uczenia głębokiego. Ich nazwa i struktura są wzorowane na ludzkim mózgu i naśladują sposób, w jaki biologiczne neurony komunikują się między sobą. Każde połączenie, tak jak synapsa w mózgu, może przekazać sygnał(liczbę rzeczywistą) dalej.
 
@@ -29,24 +32,50 @@ A decision tree is a decision support tool that uses a tree-like model of decisi
 -  Zbiór testowy - zbiór służący do przetestowania modelu. Dane te nie mogą być użyte do nauczenia czy walidacji modelu, ponieważ chcemy wiedzieć jak model poradzi sobie z danymi, z którymi nigdy nie miał styczności. Powinien być również idealnie przygotowany, bez jakichkolwiek błędów.
 
 ### Na czym polega overfitting a na czym underfitting?
-- Overfitting polega na pobieranie danych treningowych i uczeniu się z nich w pełni, nie dokonując uogólnień na zbiorze testowym. Oznacza to, że uzyskujemy dobrą dokładność w zbiorze uczącym, ale model działa słabo na danych, których wcześniej nie widział.
+- Overfitting polega na pobieraniu danych treningowych i uczeniu się z nich w pełni, nie dokonując uogólnień na zbiorze testowym. Oznacza to, że uzyskujemy dobrą dokładność w zbiorze uczącym, ale model działa słabo na danych, których wcześniej nie widział.
 
 - Underfitting polega sytuacji, kiedy model nie uczy się ważnych parametrówi relacji między danymi wejściowymi a wyjściowymi dla predykcji na zbiorze testowym, co powoduje duży błąd.
 
 ### Jak radzić sobie z overfittingiem w przypadku regresji liniowej, drzew decyzyjnych i sieci neuronowych?
+
 - Zebranie większej ilości danych
 - Dropout - losowe usuwanie z sieci pojedynczych neuronów w trakcie uczenia
 - Regularyzacja - dodatkowy termin dodawany do funkcji straty w celu nałozenia kary na wagi parametrów dużych sieci w celu zmniejszenia przepełnienia.
 - Rozszerzanie - sztuczne modyfikowanie istniejących danych za pomocą przekształceń, które przypominają zmienność, której można się spodziewać w rzeczywistych danych.
-- Wczesne zatrzymanie - forma regularyzacji w celu uniknięcia nadmiernego dopasowania
+- Wczesne zatrzymanie 
 
 ### Czym jest Eksploracyjna Analiza Danych (EDA) i po co się ją wykonuje?
-- Eksploracyjna analiza danych (EAD, ang. exploratory data analysis) to proces mający na celu zrozumienie charakterystyki danych przy użyciu technik wizualizacji oraz metod statystyki opisowej. Podczas pracy z nowym zbiorem danych powinno się poddać jej analizie polegającej na interaktywnej pracy z danymi której celem jest zaproponowanie możliwych hipotez do późniejszej weryfikacji. Taka wiedza pozwala na wybranie właściwych metod dalszej analizy statystycznej.
+- Eksploracyjna analiza danych (EAD, ang. exploratory data analysis) to proces mający na celu zrozumienie charakterystyki danych przy użyciu technik wizualizacji oraz metod statystyki opisowej. Podczas pracy z nowym zbiorem danych powinno się poddać go analizie polegającej na interaktywnej pracy z danymi, której celem jest zaproponowanie możliwych hipotez do późniejszej weryfikacji. Taka wiedza pozwala na wybranie właściwych metod dalszej analizy statystycznej.
 
 ### Czym jest outlier?
 - Outlier to obserwacja, która leży relatywnie daleko od pozostałych elementów losowej próby. Przed wyróżnieniem outlierów, należy scharakteryzować "normalne" obserwacje.
 
 ### Jakie metryki można stosować do mierzenia skuteczności działania modelu w uczeniu nadzorowanym i jaka jest ich interpretacja? Wymień przynajmniej 4.
+- **Precision = True Positive / (True Positive + False Positive)**
+
+Metryka mówi nam o tym, w jakim stopniu klasyfikacje pozytywne na podstawie modelu są poprawne
+ 
+- **Recall = True Positive / (True Positive + False Negative)** 
+
+Metryka mówi nam o zdolności modelu do wychwytywania przypadków pozytywnych
+
+- **F1**
+![This is a alt text.](f1.PNG) 
+
+Jest to średnia harmoniczna z Recall i Precision.
+
+- **Specificity = True Negative Rate = True Negative/(True Negative + False Positive)**
+
+Metryka opisująca zdolność modelu do wychwytywania przypadków negatywnych
+
+- **Accuracy = (TP+TN)/(TP+TN+FP+FN)**
+
+Metryka mówi o odsetku poprawnych klasyfikacji dokonywanych przez model.
+
+- **AUC - Area under the ROC Curve**
+
+Metryka oceny AUC jest obliczana jako obszar pod krzywą ROC (ocena poprawności klasyfikatora) i jest skalarną reprezentacją oczekiwanej wydajności klasyfikatora. Współczynnik AUC zawsze ma wartość z przedziału od 0 do 1, przy czym wyższe wartości reprezentują lepszy klasyfikator. 
+
 
 ### Czym jest walidacja krzyżowa?
 Walidacja krzyżowa to sposób przygotowania zestawów treningowych i testowych dla modelu. Polega na podzieleniu zestawu danych na podzestawy i stworzeniu z nich zestawów danych testowych i treningowych. Przykładem walidacji krzyżowej jest walidacja k-krotną, która polega na podzieleniu zestawu danych na k podzestawów i następnie kolejno braniu jednego z nich jako zestaw danych testowych, używając reszty jako zestawów danych treningowych. Oceną dokładnośći modelu jest średnia arytmetyczna wszystkich k testów.
@@ -83,9 +112,23 @@ print(len(df[df["enjoy"] == 'yes']))
 4
 
 Negatywne: 6-4=2\
-Wszstkich instancji jest 6, z czego 4 są pozytywne, a 2 negatywne.
+Wszystkich instancji jest 6, z czego 4 są pozytywne, a 2 negatywne.
 ### Który z atrybutów najlepiej rozdziela dane względem enjoy?
-
+Po przygotowaniu i przeanalizowaniu wykresów dla kolejnych atrybutów, najlepiej dane rozdziela `airTemp`.
+```py
+### dla airTemp
+df.head(5)
+df['color'] = df['airTemp']
+df['color'] = df['color'].replace('warm', 'red')
+df['color'] = df['color'].replace('cold', 'blue')
+df.head(5)
+### dla airTemp
+#df.plot.scatter(x='airTemp', y='humidity', c='color')
+#df.plot.scatter(x='airTemp', y='wind', c='color')
+#df.plot.scatter(x='airTemp', y='water', c='color')
+df.plot.scatter(x='airTemp', y='enjoy', c='color')
+```
+![This is a alt text.](airTemp.PNG)
 
 ### Ile elementów ze zbioru danych ma atrybut wilgotność ustawiony jako wysoki (humidity==high)? Jakie mają numery w zbiorze danych (liczymy od 0)?
 ```py
@@ -181,8 +224,7 @@ print('slope:', model.coef_)
 intercept: -55.89393360702407
 slope: [ 0.0488549   0.01529257  0.00557139  0.64140143 -0.27035755  1.48247217]
 ```
-Intercept to punkt przecięcia z osią OY
-Slope to współczynniki równania
+
 
 - cpu_vendor
 
@@ -202,7 +244,8 @@ slope: [-1.20152953e+02 -1.48239022e+00  2.84413532e+01 -1.09132852e+01
   4.77628052e+00  1.59127070e+01  7.14227831e-02  1.73667215e-02
   5.50390047e-03  6.43157128e-01 -1.52144498e+00  1.58663686e+00]
 ```
-
+Intercept to punkt przecięcia z osią OY (współrzędna X) \
+Slope to współczynniki równania
 ## Część 6:
 ### Wklej cały kod dla przykładu ze swimming.
 ```py
@@ -269,12 +312,33 @@ Utworzona sieć składa się z 3 warstw, funkcja odpowiadająca za dodawanie war
 
 ### Co oznacza batch_size? Czym jest liczba epok? Ile wynoszą te parametry w naszym przykładzie?
 - `BATCH_SIZE` oznacza liczbę próbek, które podawane są jednocześnie, po czym następuje aktualizacja sieci, dla naszego przykładu to 16
-- `NB_EPOCHS` oznacz liczbę powtórzeń uczenia całym zbiorem danych treningowych, dla naszego przykładu to 1000
+- `NB_EPOCHS` oznacza liczbę powtórzeń uczenia całym zbiorem danych treningowych, dla naszego przykładu to 1000
 
 
 ### Jakie funkcje aktywacji zastosowano? Czym jest funkcja aktywacji?
 Zastosowaliśmy dwie funkcje aktywacji, `ReLU` (rektyfikowana jednostka liniowa) oraz `sigmoid`.
 Funkcja aktywacji to funkcja, według której obliczana jest wartość wyjścia neuronów sieci neuronowej po agregacji danych wejściowych z uwzględnieniem wag.
+
+## Część 8:
+### Uzasadnij poprzez zamieszczenie wykresu i odpowiedz na pytania:
+- Czy mamy do czynienia ze zjawiskiem overfittingu lub underfittingu czy nie ma problemów?
+- Ile procent przypadków zostało poprawnie zaklasyfikowanych?
+
+![This is a alt text.](wykres.PNG)
+
+- Mamy do czynienia z overfittingiem, skuteczność modelu spada, kiedy ma do czynienia ze zbiorem testowym. Kiedy na zbiorze treningowym osiągamy ~83% poprawnie zaklasyfikowanych przypadków, na zbiorze testowym mamy już tylko ~76%. Z kolejnymi epokami skuteczność nie poprawia się, a pod sam koniec nawet spada.
+
+### Czy to dobry wynik? Odnieś się do skuteczności modelu, gdyby ten strzelał.
+Według mnie skuteczność na poziomie 76% to całkiem dobry wynik. Jeśli założymy, że model strzela zawsze w 0 jako outcome, wtedy osiądamy 65% skuteczności [768 przypadków w zbiorze danych, 500 to 0], co nie jest satysfakcjonującym wynikiem.
+
+### Zastosuj inne metryki (przynajmniej 2) i zaprezentuj rezultaty.
+
+Zastosowałem metryki `Precision`, `Recall` i `AUC`
+
+Epoch 1000/1000
+36/36 [==============================] - 0s 3ms/step - loss: 0.3981 - precision: 0.7566 - recall: 0.6942 - auc: 0.8920 - Accuracy: 0.8108 - val_loss: 0.4898 - val_precision: 0.6923 - val_recall: 0.4355 - val_auc: 0.8350 - val_Accuracy: 0.7552
+
+
 
 
 
