@@ -60,7 +60,7 @@ Metryka mówi nam o tym, w jakim stopniu klasyfikacje pozytywne na podstawie mod
 Metryka mówi nam o zdolności modelu do wychwytywania przypadków pozytywnych
 
 - **F1**
-![This is a alt text.](f1.PNG) 
+![This is a alt text.](f1.png) 
 
 Jest to średnia harmoniczna z Recall i Precision.
 
@@ -128,7 +128,7 @@ df.head(5)
 #df.plot.scatter(x='airTemp', y='water', c='color')
 df.plot.scatter(x='airTemp', y='enjoy', c='color')
 ```
-![This is a alt text.](airTemp.PNG)
+![This is a alt text.](airTemp.png)
 
 ### Ile elementów ze zbioru danych ma atrybut wilgotność ustawiony jako wysoki (humidity==high)? Jakie mają numery w zbiorze danych (liczymy od 0)?
 ```py
@@ -324,7 +324,7 @@ Funkcja aktywacji to funkcja, według której obliczana jest wartość wyjścia 
 - Czy mamy do czynienia ze zjawiskiem overfittingu lub underfittingu czy nie ma problemów?
 - Ile procent przypadków zostało poprawnie zaklasyfikowanych?
 
-![This is a alt text.](wykres.PNG)
+![This is a alt text.](wykres.png)
 
 - Mamy do czynienia z overfittingiem, skuteczność modelu spada, kiedy ma do czynienia ze zbiorem testowym. Kiedy na zbiorze treningowym osiągamy ~83% poprawnie zaklasyfikowanych przypadków, na zbiorze testowym mamy już tylko ~76%. Z kolejnymi epokami skuteczność nie poprawia się, a pod sam koniec nawet spada.
 
