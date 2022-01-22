@@ -328,10 +328,10 @@ Funkcja aktywacji to funkcja, według której obliczana jest wartość wyjścia 
 
 ![This is a alt text.](wykres.png)
 
-- Mamy do czynienia z overfittingiem, skuteczność modelu spada, kiedy ma do czynienia ze zbiorem testowym. Kiedy na zbiorze treningowym osiągamy ~83% poprawnie zaklasyfikowanych przypadków, na zbiorze testowym mamy już tylko ~76%. Z kolejnymi epokami skuteczność nie poprawia się, a pod sam koniec nawet spada.
+- Mamy do czynienia z overfittingiem, skuteczność modelu spada, kiedy ma do czynienia ze zbiorem testowym. Kiedy na zbiorze treningowym osiągamy ~81% poprawnie zaklasyfikowanych przypadków, na zbiorze testowym mamy już tylko ~76%. Z kolejnymi epokami skuteczność nie poprawia się, a pod sam koniec nawet spada.
 
 ### Czy to dobry wynik? Odnieś się do skuteczności modelu, gdyby ten strzelał.
-Według mnie skuteczność na poziomie 76% to całkiem dobry wynik. Jeśli założymy, że model strzela zawsze w 0 jako outcome, wtedy osiądamy 65% skuteczności [768 przypadków w zbiorze danych, 500 to 0], co nie jest satysfakcjonującym wynikiem.
+Według mnie skuteczność na poziomie 76% to całkiem dobry wynik. Jeśli założymy, że model strzela zawsze w 0 jako outcome, wtedy osiągamy 65% skuteczności [768 przypadków w zbiorze danych, 500 to 0], co nie jest satysfakcjonującym wynikiem.
 
 ### Zastosuj inne metryki (przynajmniej 2) i zaprezentuj rezultaty.
 
