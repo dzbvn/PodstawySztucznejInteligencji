@@ -130,7 +130,7 @@ df.head(5)
 df.plot.scatter(x='airTemp', y='enjoy', c='color')
 ```
 
-![This is a alt text.](airTemp.png)
+![This is a alt text.](airrTemp.png)
 
 ### Ile elementów ze zbioru danych ma atrybut wilgotność ustawiony jako wysoki (humidity==high)? Jakie mają numery w zbiorze danych (liczymy od 0)?
 ```py
