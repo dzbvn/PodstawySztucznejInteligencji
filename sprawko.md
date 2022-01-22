@@ -60,6 +60,7 @@ Metryka mówi nam o tym, w jakim stopniu klasyfikacje pozytywne na podstawie mod
 Metryka mówi nam o zdolności modelu do wychwytywania przypadków pozytywnych
 
 - **F1**
+
 ![This is a alt text.](f1.png) 
 
 Jest to średnia harmoniczna z Recall i Precision.
@@ -128,6 +129,7 @@ df.head(5)
 #df.plot.scatter(x='airTemp', y='water', c='color')
 df.plot.scatter(x='airTemp', y='enjoy', c='color')
 ```
+
 ![This is a alt text.](airTemp.png)
 
 ### Ile elementów ze zbioru danych ma atrybut wilgotność ustawiony jako wysoki (humidity==high)? Jakie mają numery w zbiorze danych (liczymy od 0)?
