@@ -289,10 +289,22 @@ Image(graph.create_png())
 Przekodowanie jest konieczne tylko dla kolumny class, ponieważ reszta klas posiada wartości w postaci liczb rzeczywistych
 
 ### Za co odpowiadają parametry max_depth, min_samples_split, min_samples_leaf?
-
+- `max_depth` - maksymalna głębokość w drzewie
+- `min_samples_split` - wymagana minimalna liczba próbek, aby podzielić wewnętrzny node
+- `min_samples_leaf` - minimalna liczba próbek wymaganych w liściu
 
 ### Umieść graficzne reprezentacje drzew dla iris (przynajmniej 1 na modyfikowany parametr – podaj wartości).
+- clf_gini = tree.DecisionTreeClassifier(criterion='gini', min_samples_split=5)
 
+![This is a alt text.](iris1.png)
+
+- clf_gini = tree.DecisionTreeClassifier(criterion='gini', min_samples_leaf=4)
+
+![This is a alt text.](iris2.png)
+
+- clf_gini = tree.DecisionTreeClassifier(criterion='gini', max_depth=2)
+
+![This is a alt text.](iris3.png)
 
 ## Część 7:
 ### Wklej rysunki 2 neuronów dla AND i OR.
@@ -339,10 +351,6 @@ Zastosowałem metryki `Precision`, `Recall` i `AUC`
 
 Epoch 1000/1000
 36/36 [==============================] - 0s 3ms/step - loss: 0.3981 - precision: 0.7566 - recall: 0.6942 - auc: 0.8920 - Accuracy: 0.8108 - val_loss: 0.4898 - val_precision: 0.6923 - val_recall: 0.4355 - val_auc: 0.8350 - val_Accuracy: 0.7552
-
-
-
-
 
 
 
